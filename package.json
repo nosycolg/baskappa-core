@@ -18,6 +18,8 @@
     "supertest": "^6.3.4"
   },
   "scripts": {
+    "setup_test_environment": "docker run --rm --name baskappa -e MYSQL_ROOT_PASSWORD=root -d -p 3308:3308 mysql:8.0 && mysql --host=localhost --user=root --password=root --port 3308 --protocol=tcp -e \"create schema baskappa;\"",
+    "pre_load_database": "node ./test/assets/pre_load_database",
     "build": "npx tsc",
     "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",

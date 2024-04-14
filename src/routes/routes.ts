@@ -8,7 +8,6 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({extended: true}));
 
-
 app.get('/get/courts', courtsController.getCourts);
 app.post('/create/court', courtsController.createCourt);
 
